@@ -1,0 +1,43 @@
+@import "../../../scss/theme-app";
+
+.page__main {
+  //height: 100%;
+  flex-grow: 1;
+  margin: 0;
+  padding: 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+  border-left: 1px solid $border--color;
+  background: $content--bg-color;
+}
+
+.PageEmpty {
+  padding: 0 !important;
+  border-left: none !important;
+
+  .Content {
+    width: 550px;
+    min-height: 850px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  /**************************/
+  @media (max-width: 550px) {
+    .Content {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .Content {
+      width: $app-min-width;
+    }
+  }
+
+}

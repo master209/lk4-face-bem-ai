@@ -1,0 +1,19 @@
+@import "../../../../scss/theme-app";
+
+.nav__link {
+  color: $black;
+}
+
+.nav__link_topbar {
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 23px;
+  font-weight: 300;
+  border-bottom: 1px solid transparent;
+  letter-spacing: 0.96px;
+  margin: 0 3px;
+
+  &:hover {
+    border-bottom-color: $black;
+  }
+}

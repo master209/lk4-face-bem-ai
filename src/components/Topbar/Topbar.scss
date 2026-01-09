@@ -1,0 +1,43 @@
+@import "../../scss/theme-app";
+
+.topbar {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  background: $white;
+  padding: 5px 0;
+  border-bottom: 1px solid $border--color;
+  min-height: 48px;
+
+  > div {
+    padding: 0 30px;
+  }
+
+  :last-child {
+    padding-right: 0;
+  }
+}
+
+
+.link {
+  border-bottom: none;
+}
+
+
+/**************************/
+@media (max-width: 768px) {
+  .topbar {
+    > div {
+      padding: 0 15px;
+    }
+
+    .topbar__icon-notifications,
+    .topbar-username {
+      display: none;
+    }
+
+  }
+
+}

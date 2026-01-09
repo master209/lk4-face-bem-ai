@@ -1,0 +1,87 @@
+/* theme-lk4 */
+
+$app-min-width: 360px;
+$app-max-width: 1200px;
+
+$card--border-radius: 10px;
+$input--border-radius: 10px;
+
+$transition-duration: .22s;
+$box-shadow: .5px .5px 1px 1px rgba(0, 0, 0, 0.2);
+$content--font-size: 15px;
+
+$white: #fff;
+$black: #000;
+$yellow: #fc0;
+$red: #ff6758;  //#e74c3c;  //#f45d5d;
+$green: #4bff4b;
+
+$brand--color: #3A89B0;   //#3F99C6;   // #B03AAE;
+$border--color: #f3ebdc;
+$content--color: #3c4b64;
+$error--color: #ef3a3a;
+$required--color: $error--color;
+
+$alert--info-color: #004085;
+$bg-info-color: #cce5ff;
+$alert--success-color: #155724;
+$bg-success-color: #d4edda;
+$alert--error-color: #721c24;
+$bg-error-color: #f8d7da;
+
+$main--bg-color: $white;
+$content--bg-color: #fcfcfc;
+$bg-color_loading: rgba(255,255,255,.3);
+$bg-color_disabled: #bfc3ca;
+$bg-color_disabled-light: #e9ecef;  //lighten($bg-color_disabled, 11%);
+$bg-color_hover: #efefef;   // #cbcbcb   // rgb(237, 238, 240);  // #dcdcdc
+$status--bg-color_off: $red;
+$status--bg-color_on: $green;
+
+/* Form inputs */
+$input--color: #4a5260;
+$placeholder--color: #979797; // #888;
+$input--border-color: #bcbcbc; /* d8dbe0 */
+$input--border-color-light: #d9d9d9; /* d8dbe0 */
+$input--border-color_focused: #998fed;  // #958bef;
+$input--box-shadow_focused: 0 0 0 1px rgba(50,31,219,.25);
+$submit-btn--bg-color: lighten($brand--color, 12%); //#337ab7;
+$submit-btn--bg-color_hover: $brand--color; //#286090;
+$submit-btn--border-color: #2e6da4;
+$submit-btn--border-color_hover: #204d74;
+$submit-btn--height: 40px;
+$submit-btn--height_hover: 42px;
+$form-input--margin-bottom: 17px;
+$InputIcon--padding: 3px 5px;
+
+/* Button */
+$button--color: lighten($black, 60%);
+$button--bg-color: $white;  //#adadad;
+$button--border-color: transparent;  //#adadad;
+$button--color_hover: $black; //#e6e6e6;
+$button--bg-color_hover: $button--bg-color;
+$button--border-color_hover: $input--border-color-light;
+//$button--color_disabled: #8a93a2;
+$button--height: 38px;
+$button--padding: 0 15px;
+$button--box-shadow: $box-shadow;
+
+/* Link */
+$link--color: #02A5CE; //rgb(240, 119, 70);
+$red_link-color: #f07746; //rgb(240, 119, 70);
+$link--color_hover: $link--color;
+$link--border-color_hover: $link--color;
+$link--color_disabled: #8a93a2;
+
+/* Grid */
+$table--border-color: #a4a5a6;
+$row--bg-color_selected: #f4e882; /* rgb(188, 231, 116) */
+$pagination--color: #321fdb;
+$pagination--border-color: $input--border-color;
+
+/* Nav */
+$nav-title--bg-color_expanded: $bg-color_hover;
+$nav-title--color: $yellow;
+$nav-link--color: lighten($black, 60%);   // rgba(0,0,0,.5);
+$nav-link--color_active: $black;
+

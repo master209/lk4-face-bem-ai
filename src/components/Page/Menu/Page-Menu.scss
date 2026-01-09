@@ -1,0 +1,35 @@
+@import "./_closed/Page-Menu_closed";
+
+.page__menu {
+  position: sticky;
+  z-index: 20;
+  opacity: 1;
+  bottom: 0;
+  top: 0;
+  width: 260px;
+  min-width: 260px;
+  margin-top: 13px;
+  overflow: hidden;
+  overflow-y: auto;
+  transition: all .25s ease-in-out;
+}
+
+
+/**************************/
+@media (max-width: 768px) {
+  .page__menu {
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 50px;
+      left: 261px;
+      z-index: 10;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(108, 117, 125, 0.75);
+      opacity: .9;
+    }
+
+  }
+}

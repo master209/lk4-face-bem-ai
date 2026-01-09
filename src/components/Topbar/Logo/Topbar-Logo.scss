@@ -1,0 +1,11 @@
+.topbar__logo {
+  flex-basis: 260px;
+}
+
+/**************************/
+@media (max-width: 550px) {
+  .topbar__logo {
+    flex-basis: auto;
+    padding: 0 15px;
+  }
+}

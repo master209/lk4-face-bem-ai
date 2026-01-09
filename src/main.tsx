@@ -1,7 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 import {Provider} from 'react-redux';
-
 import HistoryRouter from './components/HistoryRouter';
 import browserHistory from './browser-history';
 import App from './App';
@@ -17,19 +16,12 @@ import '@fontsource/montserrat/cyrillic-700.css';
 
 import './index.scss';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
-
-const loader: HTMLCollectionOf<HTMLElement> = document.getElementsByClassName("loader-wrap") as HTMLCollectionOf<HTMLElement>;
-loader[0].style.display = 'none';
-
-root.render(
-  <React.StrictMode>
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
     <Provider store = {store}>
       <HistoryRouter history={browserHistory}>
         <App />
       </HistoryRouter>
     </Provider>
-  </React.StrictMode>,
+  </StrictMode>,
 );

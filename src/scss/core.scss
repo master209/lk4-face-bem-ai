@@ -1,0 +1,55 @@
+@charset "UTF-8";
+@import "theme-app";
+@import "../blocks/Color/Color";
+@import "../blocks/Wrap/Wrap";
+@import "../blocks/Auth/Auth";
+
+/**
+ * Основные стили
+ **/
+
+body {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.App {
+  //font-family: 'Montserrat', sans-serif;
+  div, p, input {
+    box-sizing: border-box;
+  }
+}
+
+.Container {
+  @include min-max($app-min-width, 100%, 0);
+}
+
+h1 {
+  font-size: 27px;
+  line-height: 35px;
+  margin: 16px 0 40px;
+}
+
+h2 {
+  font-size: 25px;
+  line-height: 27px;
+}
+
+.Error {
+  color: $error--color;
+}
+
+.Hidden {
+  display: none;
+}
+
+*:disabled {
+  background-color: $bg-color_disabled !important;
+  cursor: not-allowed;
+}
+
+input::placeholder {
+  color: $placeholder--color;
+}
+

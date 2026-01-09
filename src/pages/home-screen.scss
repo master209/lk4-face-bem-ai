@@ -1,0 +1,14 @@
+@import "../scss/theme-app";
+
+.News-One {
+  line-height: 21px;
+}
+.News-Block {
+  margin: 5px 0;
+}
+
+.Published {
+  font-size: 13px;
+  text-align: right;
+  color: $input--color;
+}

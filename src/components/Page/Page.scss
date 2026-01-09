@@ -1,0 +1,21 @@
+@import "../../scss/theme-app";
+
+.App {
+
+}
+
+.ModalBlock-Wrap {
+  padding: 15px;
+}
+
+.page {
+  display: flex;
+  background-color: $main--bg-color;
+  font: 16px/2 Arial,sans-serif;
+}
+
+.Toastify__toast-body {
+  font-size: 15px;
+  line-height: 18px;
+}
+

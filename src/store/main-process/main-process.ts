@@ -29,6 +29,9 @@ export const mainProcess = createSlice({
   name: NameSpace.Main,
   initialState,
   reducers: {
+    invertIsMenuClosed: (state) => { // инвертирует значение isMenuClosed
+      state.isMenuClosed = !state.isMenuClosed;
+    },
     setIsMenuClosed: (state, {payload}) => { // явное значение для isMenuClosed
       state.isMenuClosed = payload;
     },
@@ -57,6 +60,7 @@ export const mainProcess = createSlice({
 });
 
 export const {
+  invertIsMenuClosed,
   setIsMenuClosed,
   setActivePageMenuId,
   setActivePageMenuLink,

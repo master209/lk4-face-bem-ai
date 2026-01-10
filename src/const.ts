@@ -35,6 +35,9 @@ export enum AppRoute {
   Contacts = '/about/about/contacts',
   UserProfile = '/user/settings/profile',
 
+  MyTariff = '/service/internet/my-tariff',
+  Tariffs = '/service/internet/tariffs',
+
   NotFound = '/not-found-screen'
 }
 

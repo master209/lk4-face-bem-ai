@@ -18,12 +18,9 @@ const Contacts: FC<IClassNameProps> = () => (
     </HelmetProvider>
     <h1>Контакты</h1>
     <div>
-      <p>ООО «Галс-телеком»</p>
-      <p>ИНН: 6454130467</p>
-      <p>Юр. адрес: 410004, г.Саратов, ул.Чернышевского, зд.88. стр.1</p>
-      <p>Адрес офиса: г.Саратов, пл.Ильинская, зд. 1В, оф.21</p>
-      <p>Тел.: <Link href="tel:+78452677502" className={cnContacts('Link')}>8 (845-2) 677-502</Link></p>
-      <p>Эл. почта: <Link href="mailto:service@gals-telecom.ru">service@gals-telecom.ru</Link></p>
+      <p>ООО Рога и копыта»</p>
+      <p>Адрес: г. Барнаульск</p>
+      <p>Тел.: <Link href="tel:+78499777500" className={cnContacts('Link')}>8 (849-9) 777-500</Link></p>
     </div>
   </div>
 );

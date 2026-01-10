@@ -9,4 +9,12 @@ export const navSideMenu: INavItem[] = [
       {to: AppRoute.Contacts, text: 'Контакты'},
     ],
   },
+  {
+    id: 'service',
+    title: 'Интернет',
+    links: [
+      {to: AppRoute.MyTariff, text: 'Мои услуги'},
+      {to: AppRoute.Tariffs, text: 'Тарифы'},
+    ],
+  },
 ];

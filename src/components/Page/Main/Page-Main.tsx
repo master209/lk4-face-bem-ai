@@ -12,7 +12,7 @@ export interface IPageMainProps extends IClassNameProps {
 }
 
 export const PageMain: FC<IPageMainProps> = ({children, className}) => (
-  <div className={`${cnPage()}__main ${className || ''}`}>
+  <div className={cnPage('Main', className)}>
     <Suspense fallback={<Spinner2/>}>
       <Content>
         {children}

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import { IClassNameProps, compose } from '@bem-react/core';
 
@@ -6,7 +6,7 @@ import { cnTopbar } from '..';
 import { Icon } from '../../../blocks';
 import { withIconTypeLink } from '../../../blocks/Icon/_type/Icon_type_link@desktop';
 
-import { invertIsMenuClosed } from '../../../store/main-process';
+import { /*getIsMenuClosed, */invertIsMenuClosed } from '../../../store/main-process';
 import { /*useAppSelector, */useAppDispatch } from '../../../hooks';
 import { IMG_PATH } from '../../../const';
 
@@ -18,8 +18,9 @@ export const TopbarIcons: FC<IClassNameProps> = ({...props}) => {
   const dispatch = useAppDispatch();
   // const isMenuClosed = useAppSelector(getIsMenuClosed);
   const handleToggleMenu = () => dispatch(invertIsMenuClosed());
+
   return (
-    <div {...props} className={`${cnTopbar()}__icons`}>
+    <div {...props} className={cnTopbar('Icons')}>
       <IconTypeLink
         type="link"
         src={`${IMG_PATH}toggle-menu.svg`}
@@ -34,8 +35,19 @@ export const TopbarIcons: FC<IClassNameProps> = ({...props}) => {
         alt='notifications'
         // tip="Уведомления"
         onClick={() => true}
-        className={`${cnTopbar()}__icon-notifications`}
+        className={cnTopbar('IconNotifications')}
       />
+      {/*
+    <IconTypeLink
+      type="link"
+      src={`${IMG_PATH}settings.svg`}
+      alt='settings'
+      // tip="Настройки"
+      href="/#"
+      onClick={() => true}
+      className={cnTopbar('IconSettings')}
+    />
+*/}
     </div>
   );
 };

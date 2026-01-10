@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { withBemMod } from '@bem-react/core';
 import { Tooltip } from '@yandex/ui/Tooltip/desktop/bundle';
 

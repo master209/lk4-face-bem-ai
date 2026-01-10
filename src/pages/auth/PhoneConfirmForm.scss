@@ -1,0 +1,28 @@
+@import "../../scss/theme-app";
+
+.PhoneConfirmForm {
+  text-align: center;
+
+  p {
+    font-size: 14px;
+  }
+
+}
+
+.NoSms {
+  .Link {
+    font-size: 13px;
+  }
+}
+
+.SmsRepeatTimeout {
+
+}
+
+.FormWarning {
+  margin: -5px auto 2px !important;
+
+  p {
+    font-size: 13px;
+  }
+}

@@ -1,6 +1,6 @@
 @import "./_closed/Page-Menu_closed";
 
-.page__menu {
+.Page-Menu {
   position: sticky;
   z-index: 20;
   opacity: 1;
@@ -17,7 +17,7 @@
 
 /**************************/
 @media (max-width: 768px) {
-  .page__menu {
+  .Page-Menu {
 
     &::before {
       content: "";

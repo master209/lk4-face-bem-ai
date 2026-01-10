@@ -21,7 +21,7 @@ export const TopbarLogo: FC<IClassNameProps> = (props) => {
   };
 
   return (
-    <div className={`${cnTopbar()}__logo`}{...props}>
+    <div className={cnTopbar('Logo')}{...props}>
       <Logo
         src={`${IMG_PATH}logo.png`}
         handleClick={handleClick}

@@ -9,8 +9,8 @@ export interface ILogoProps extends IClassNameProps {
   handleClick: (ev: MouseEvent) => void;
 }
 
-export const cnLogo = cn('logo');
+export const cnLogo = cn('Logo');
 
 export { Logo } from './Logo';
-export { LogoLabel } from './Label/Logo__Label';
+export { LogoLabel } from './Label/Logo-Label';
 

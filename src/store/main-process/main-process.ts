@@ -35,6 +35,12 @@ export const mainProcess = createSlice({
     setIsMenuClosed: (state, {payload}) => { // явное значение для isMenuClosed
       state.isMenuClosed = payload;
     },
+    setActiveTopbarMenuId: (state, {payload: {navItemId}}) => {
+      if (state.activeTopbarMenuId !== navItemId) {
+        state.activeTopbarMenuId = navItemId as string;
+        state.activePageMenu = {id:'', link:''}; // сбрасываем значения в прочих меню
+      }
+    },
     setActivePageMenuId: (state, {payload: {navItemId}}) => {
       if (state.activePageMenu['id'] !== navItemId) {
         state.activePageMenu = {id:navItemId as string, link: state.activePageMenu.link};
@@ -47,12 +53,26 @@ export const mainProcess = createSlice({
         state.activePageMenu = {id, link: navLinkId as string};
       }
     },
+    setToastText: (state, {payload}) => {
+      state.toastMain = payload;
+    },
   },
+/*
+  extraReducers(builder) {
+    builder
+      .addCase(fetchLoadOffers.pending, (state) => {
+        state.isOffersLoading = true;
+        state.areOffersLoaded = false;
+      })
+  }
+*/
 });
 
 export const {
   invertIsMenuClosed,
   setIsMenuClosed,
+  setActiveTopbarMenuId,
   setActivePageMenuId,
   setActivePageMenuLink,
+  setToastText,
 } = mainProcess.actions;

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { cnLogo, ILogoProps, LogoLabel } from '.';
-import { LogoImg } from './Img/Logo__Img';
+import { LogoImg } from './Img/Logo-Img';
 import { Link } from '../Link';
 
 import './Logo.scss';

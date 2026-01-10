@@ -4,7 +4,7 @@ import {INavProps, NavItem} from '.';
 
 import './Nav.scss';
 
-export const cnNav = cn('nav');
+export const cnNav = cn('Nav');
 
 export const Nav: FC<INavProps> = ({
   navItems,

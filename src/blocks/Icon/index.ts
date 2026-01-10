@@ -13,5 +13,5 @@ export interface IIconProps extends IClassNameProps {
   onClick?: (ev: MouseEvent) => void;
 }
 
-export const cnIcon = cn('icon');
+export const cnIcon = cn('Icon');
 export { Icon } from './Icon';

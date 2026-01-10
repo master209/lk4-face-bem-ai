@@ -1,0 +1,19 @@
+@import "../../scss/theme-app";
+@import "../../blocks/Auth/Auth";
+
+.LoginForm {
+  margin-bottom: 5% !important;
+
+  .RegButton {
+    margin-top: 5px;
+
+    .Link {
+      transition: none;
+
+      &:hover {
+        border-bottom: 1px solid $input--border-color-light;
+      }
+    }
+  }
+
+}

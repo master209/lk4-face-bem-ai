@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import React, { FC, ComponentType } from 'react';
 
 import { IClassNameProps } from '@bem-react/core';
 import { classnames } from '@bem-react/classnames';
 import { useRegistry } from '@bem-react/di';
 
-import { cnTopbar, TopbarIcons } from '.';
+import { cnTopbar, TopbarIcons, TopbarUser, TopbarBalance } from '.';
 
 import './Topbar.scss';
 
@@ -18,6 +18,8 @@ export const Topbar: FC<IClassNameProps> = ({className, ...props}) => {
     >
       <TopbarLogo/>
       <TopbarIcons/>
+      <TopbarBalance/>
+      <TopbarUser/>
     </div>
   );
 };

@@ -18,7 +18,7 @@ export const NavLink: FC<INavLinkProps> = ({
 }) => (
   <Link
     href={href}
-    className={`${cnNav()}__link`}
+    className={cnNav('Link')}
     handleClick={(ev: MouseEvent) => handleClick(ev)}
   >
     {children}

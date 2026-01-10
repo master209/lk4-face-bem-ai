@@ -1,6 +1,6 @@
 @import "../../scss/theme-app";
 
-.topbar {
+.Topbar {
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: flex-end;
@@ -20,21 +20,34 @@
   }
 }
 
+.Topbar .Nav-Link {
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 23px;
+  font-weight: 300;
+  border-bottom: 1px solid transparent;
+  letter-spacing: 0.96px;
+  margin: 0 3px;
 
-.link {
+  &:hover {
+    border-bottom-color: $black;
+  }
+}
+
+.Link {
   border-bottom: none;
 }
 
 
 /**************************/
 @media (max-width: 768px) {
-  .topbar {
+  .Topbar {
     > div {
       padding: 0 15px;
     }
 
-    .topbar__icon-notifications,
-    .topbar-username {
+    .Topbar-IconNotifications,
+    .Topbar-Username {
       display: none;
     }
 

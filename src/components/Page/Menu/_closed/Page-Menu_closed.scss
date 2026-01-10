@@ -1,13 +1,15 @@
-.page__menu_closed {
+.Page-Menu_closed {
   width: 0 !important;
   min-width: 0 !important;
 
-/* TODO: проверить селектор для SideNav */
+  .Page-SideNav {
+    opacity: 0;
+  }
 }
 
 /**************************/
 @media (max-width: 768px) {
-  .page__menu_closed {
+  .Page-Menu_closed {
 
     &::before{
       position: static !important;

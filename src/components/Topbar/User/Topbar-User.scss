@@ -1,0 +1,21 @@
+@import "../../../scss/theme-app";
+
+.Topbar-User {
+  display: flex;
+  align-items: center;
+  padding-right: 8px !important;
+}
+
+.Topbar-Username {
+  color: lighten($black, 25%);
+  transition: color $transition-duration;
+
+  &:hover {
+    color: $link--color_hover;
+    cursor: pointer;
+  }
+}
+
+.Topbar-IconExit {
+  margin: 0 12px;
+}

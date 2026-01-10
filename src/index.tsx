@@ -7,6 +7,8 @@ import browserHistory from './browser-history';
 import App from './App';
 
 import { store } from './store';
+import { fetchCheckAuth } from './store/api-actions';
+import { getToken } from './services/token';
 
 //https://www.npmjs.com/package/@fontsource/montserrat
 import '@fontsource/montserrat/cyrillic-100.css';
@@ -16,6 +18,10 @@ import '@fontsource/montserrat/cyrillic-600.css';
 import '@fontsource/montserrat/cyrillic-700.css';
 
 import './index.scss';
+
+const token = getToken();
+
+store.dispatch(fetchCheckAuth(token));
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,

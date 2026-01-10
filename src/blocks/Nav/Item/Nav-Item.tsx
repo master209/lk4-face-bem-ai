@@ -18,7 +18,7 @@ export const NavItem: FC<INavItemProps> = ({
   activeItemId,
   handleClick
 }) => (
-  <li className={`${cnNav()}__item ${to === activeItemId ? `${cnNav()}__item_active` : ''}`}>
+  <li className={cnNav('Item', {active: to === activeItemId})}>
     <NavLink
       href={`/${to}`}
       handleClick={(ev: MouseEvent) => handleClick(ev)}

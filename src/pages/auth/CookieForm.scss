@@ -1,0 +1,65 @@
+@import "../../scss/theme-app";
+
+.CookieForm {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fdffca;  //fffed9
+  padding: 0 6px;
+
+  p {
+    margin: 0 6px;
+  }
+
+  .CookieIcon {
+    font-size: 20px;
+  }
+
+  .CookieButton {
+    height: 38px;
+
+    .Button-Wrap {
+      .Button {
+        height: 36px;
+        width: 96px;
+        color: $white !important;
+        background-color: $black;
+        border: none;
+        box-shadow: none;
+        transition: all $transition-duration;
+
+        &:hover {
+          height: 38px;
+          width: 98px;
+        }
+      }
+    }
+  }
+}
+
+
+/**************************/
+@media (max-width: 550px) {
+
+  .CookieIcon {
+    display: none;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .CookieForm {
+    width: 100%;
+    p {
+      font-size: 13px;
+      margin: 0 4px;
+      line-height: 16px;
+    }
+  }
+
+}

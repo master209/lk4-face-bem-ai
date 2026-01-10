@@ -1,4 +1,4 @@
-import React, { FC/*, useEffect*/, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import {
   cnSideNav,
@@ -22,17 +22,19 @@ export const SideNavLk4: FC<ISideNavProps> = ({
   const [expandedItemId, setExpandedItemId] = useState(activeNavItem.id);
   const isActive = (navItemId:string) => navItemId === activeNavItem.id;
 
-  /* при перезагрузке страницы нужно развернуть активный узел меню
+  // при выборе активного подпункта нужно развернуть соответствующий раздел
   useEffect(() => {
-    setExpandedItemId((prevState) => {
-      let ret = prevState;
-      prevState !== activeNavItem.id && (ret = prevState);
-      !prevState && (ret = activeNavItem.id);
+    if (activeNavItem.link) {
+      // найти раздел, содержащий активную ссылку
+      const sectionId = navItems?.find(item =>
+        item.links.some(link => link.to === activeNavItem.link)
+      )?.id;
 
-      return ret;
-    });
-  }, [activeNavItem]);
-*/
+      if (sectionId && sectionId !== expandedItemId) {
+        setExpandedItemId(sectionId);
+      }
+    }
+  }, [activeNavItem.link, navItems]);
 
   return (
     <ul

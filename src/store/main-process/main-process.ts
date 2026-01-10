@@ -48,15 +48,6 @@ export const mainProcess = createSlice({
       }
     },
   },
-/*
-  extraReducers(builder) {
-    builder
-      .addCase(fetchLoadOffers.pending, (state) => {
-        state.isOffersLoading = true;
-        state.areOffersLoaded = false;
-      })
-  }
-*/
 });
 
 export const {

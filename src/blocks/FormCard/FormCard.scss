@@ -1,0 +1,20 @@
+@import "../../scss/theme-app";
+
+/* Блок FormCard - карточка формы авторизации */
+.FormCard {
+  width: $app-min-width;
+  min-width: $app-min-width;
+  margin: 10% auto;
+  padding: 22px 23px;
+
+  >p, >div {
+    margin: 10px 0;
+  }
+}
+
+/* Модификатор для мобильных устройств */
+@media (max-width: 380px) {
+  .FormCard {
+    width: 100%;
+  }
+}

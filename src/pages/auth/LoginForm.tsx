@@ -8,6 +8,8 @@ import {
   Form,
   FormLogo,
   FormInfo,
+  FormCard,
+  cnFormLayout,
   Link,
   withLinkTypeA,
 } from '../../blocks';
@@ -85,12 +87,12 @@ function LoginForm(): JSX.Element {
   };
 
   return (
-    <div className={cnLoginForm(null, ['Auth', 'Form', 'Card'])}>
+    <FormCard className={cnLoginForm()}>
       <HelmetProvider>
         <title>{TITLE_FREFIX}Вход в личный кабинет</title>
       </HelmetProvider>
-      <FormLogo/>
-      <div className="FormTitle">
+      <FormLogo className={cnFormLayout('logo')}/>
+      <div className={cnFormLayout('title')}>
         Вход в личный кабинет
       </div>
       <Form onSubmit={onSubmit} handleSubmit={handleSubmit}>
@@ -118,10 +120,10 @@ function LoginForm(): JSX.Element {
           </div>
         */}
       </Form>
-      <div className="RegButton Button-Wrap">
+      <div className={cnLoginForm('reg-button', ['Button-Wrap'])}>
         <LinkTypeA
           href={AppRoute.Rega}
-          className="Button"
+          className={cnLoginForm('reg-link', ['Button'])}
         >
           Зарегистрироваться
         </LinkTypeA>
@@ -130,13 +132,13 @@ function LoginForm(): JSX.Element {
         <FormInfo>
           <Link
             href={AppRoute.ResetPassword}
-            className="RememberAll"
+            className={cnLoginForm('remember-link')}
           >
             Я забыл пароль
           </Link>
         </FormInfo>
         : null}
-    </div>
+    </FormCard>
   );
 }
 

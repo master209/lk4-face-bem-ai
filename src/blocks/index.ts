@@ -4,6 +4,8 @@ export { Link, withLinkTypeA } from './Link';
 export { cnForm, Form, } from './Form/Form';
 export { FormLogo } from './FormLogo/FormLogo';
 export { FormInfo } from './FormInfo/FormInfo';
+export { FormCard, cnFormCard } from './FormCard';
+export { cnFormLayout } from './FormLayout';
 export { Input } from './Input/Input';
 export { InputLabel } from './InputLabel/InputLabel';
 export { InputHelp } from './InputHelp/InputHelp';

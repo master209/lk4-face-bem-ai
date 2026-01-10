@@ -1,0 +1,59 @@
+@import "../../scss/theme-app";
+
+/* Блок FormLayout - раскладка элементов формы */
+
+/* Элемент: форма */
+.FormLayout__form {
+  margin-top: 10px;
+}
+
+/* Элемент: логотип */
+.FormLayout__logo {
+  margin: 0 0 5px;
+}
+
+/* Элемент: заголовок */
+.FormLayout__title {
+  /* Стили для заголовков форм */
+}
+
+/* Элемент: подзаголовок */
+.FormLayout__subtitle {
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Элемент: кнопка */
+.FormLayout__button {
+  width: 270px !important;
+  padding: 5px 0;
+  box-shadow: none;
+
+  &:hover {
+    width: 278px;
+  }
+
+  &:disabled {
+    &:hover {
+      width: 270px;
+    }
+  }
+}
+
+/* Элемент: чекбокс */
+.FormLayout__input-checkbox {
+  width: 27px !important;
+  height: 27px !important;
+}
+
+/* Элемент: предупреждение */
+.FormLayout__warning {
+  color: $red;
+  line-height: 14px;
+  font-size: 13px;
+}
+
+/* Элемент: информационный блок */
+.FormLayout__info {
+  /* Стили для информационных блоков */
+}

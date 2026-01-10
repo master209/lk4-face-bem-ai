@@ -26,7 +26,7 @@ export const SideNavLink: FC<ISideNavLinkProps> = ({
   <Link
     href={href}
     className={cnSideNav('Link', {active})}
-    handleClick={(ev: MouseEvent) => handleClick(ev)}
+    handleClick={handleClick}
   >
     {children}
   </Link>

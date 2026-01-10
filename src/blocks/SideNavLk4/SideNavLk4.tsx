@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
 
 import {
   cnSideNav,
@@ -19,14 +19,15 @@ export const SideNavLk4: FC<ISideNavProps> = ({
   handleNavLinkClick,
   className
 }) => {
-  const [expandedItemId, setExpandedItemId] = useState(activeNavItem.id);
-  const isActive = (navItemId:string) => navItemId === activeNavItem.id;
+  const initialExpandedId = useMemo(() => activeNavItem.id, []);
 
-  // при выборе активного подпункта нужно развернуть соответствующий раздел
+  const [expandedItemId, setExpandedItemId] = useState(initialExpandedId);
+
+  const isActive = useCallback((navItemId: string) => navItemId === activeNavItem.id, [activeNavItem.id]);
+
   useEffect(() => {
-    if (activeNavItem.link) {
-      // найти раздел, содержащий активную ссылку
-      const sectionId = navItems?.find(item =>
+    if (activeNavItem.link && navItems) {
+      const sectionId = navItems.find(item =>
         item.links.some(link => link.to === activeNavItem.link)
       )?.id;
 
@@ -36,39 +37,43 @@ export const SideNavLk4: FC<ISideNavProps> = ({
     }
   }, [activeNavItem.link, navItems]);
 
+  const handleTitleClick = useCallback((navItemId: string) => {
+    setExpandedItemId(prev => prev === navItemId ? '' : navItemId);
+    handleNavItemClick(navItemId);
+  }, [handleNavItemClick]);
+
+  const handleLinkClick = useCallback((ev: React.MouseEvent, navLinkId: string) => {
+    handleNavLinkClick({ev, navLinkId});
+  }, [handleNavLinkClick]);
+
   return (
-    <ul
-      className={cnSideNav(null, [className])}
-    >
-      {navItems && navItems.map(({id: navItemId, title, links}) => (
+    <ul className={cnSideNav(null, [className])}>
+      {navItems?.map((item) => (
         <li
-          key={navItemId}
+          key={item.id}
           className={cnSideNav('Item', {
-            active: isActive(navItemId),
-            expanded: expandedItemId === navItemId
+            active: isActive(item.id),
+            expanded: expandedItemId === item.id
           })}
         >
           <SideNavTitle
             className={cnSideNav('Title')}
-            handleNavItemClick={() => {
-              setExpandedItemId(expandedItemId === navItemId ? '' : navItemId);
-              handleNavItemClick(navItemId);
-            }}
+            handleNavItemClick={() => handleTitleClick(item.id)}
           >
-            {title}
+            {item.title}
           </SideNavTitle>
           <SideNavContent
             className={cnSideNav('Content')}
-            visible={expandedItemId === navItemId}
+            visible={expandedItemId === item.id}
           >
-            {links.map(({to, text}) => (
+            {item.links.map((link) => (
               <SideNavLink
-                key={`${navItemId}-${to}`}
-                href={to}
-                active={to === activeNavItem.link}
-                handleClick={(ev) => handleNavLinkClick({ev, navLinkId: to})}
+                key={`${item.id}-${link.to}`}
+                href={link.to}
+                active={link.to === activeNavItem.link}
+                handleClick={(ev) => handleLinkClick(ev, link.to)}
               >
-                {text}
+                {link.text}
               </SideNavLink>
             ))}
           </SideNavContent>

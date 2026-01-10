@@ -40,13 +40,11 @@ export interface IHandleClick {
 export interface ISideNavProps extends IClassNameProps {
   navItems?: INavItem[];
   activeNavItem: {
-    id:string;
+    id: string;
     link: string;
   };
   handleNavItemClick: (navItemId: string) => void;
   handleNavLinkClick: ({ev, navLinkId}: IHandleClick) => void;
-  // collapsible?: boolean; // развернутый пункт меню сворачивается по клику на нем самом (а не только на др пункте)
-  // flat?: boolean; // пункт меню, не имеющий вложенного меню
 }
 
 export { SideNavLk4 } from './SideNavLk4';

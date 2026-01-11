@@ -2,16 +2,38 @@
 
 /* Блок FormCard - карточка формы авторизации */
 .FormCard {
+  position: relative;
+  display: flex;
   width: $app-min-width;
   min-width: $app-min-width;
   margin: 10% auto;
   padding: 22px 23px;
+  flex-direction: column;
   align-items: center;
-/* 
-  >p, >div {
-    margin: 10px 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid;
+  border-radius: $card--border-radius;
+  background-color: $white;
+  border-color: $input--border-color;
+  line-height: 24px;
+  transition: box-shadow $transition-duration;
+
+  &:hover {
+    box-shadow: $box-shadow;
   }
- */
+}
+
+.FormCard-Item {
+  margin: 10px auto;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.FormCard-Item:first {
+  margin-top: 0;
 }
 
 /* Модификатор для мобильных устройств */

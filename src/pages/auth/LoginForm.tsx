@@ -88,15 +88,19 @@ function LoginForm(): JSX.Element {
   };
 
   return (
-    <FormCard className={classnames(/* 'Form',  */'Card', cnLoginForm())}>
+    <FormCard className={cnLoginForm()}>
       <HelmetProvider>
         <title>{TITLE_FREFIX}Вход в личный кабинет</title>
       </HelmetProvider>
-      <FormLogo className={cnFormLayout('Logo')}/>
-      <div className={cnFormLayout('Title')}>
+      <FormLogo className={cnFormLayout('Logo', ['FormCard-Item'])}/>
+      <div className={cnFormLayout('Title', ['FormCard-Item'])}>
         Вход в личный кабинет
       </div>
-      <Form onSubmit={onSubmit} handleSubmit={handleSubmit}>
+      <Form
+      className={cnFormLayout('Form')}
+      onSubmit={onSubmit}
+      handleSubmit={handleSubmit}
+      >
         <Nav
           navItems={[
             {to: 'phone', text: 'Телефон'},
@@ -121,7 +125,7 @@ function LoginForm(): JSX.Element {
           </div>
         */}
       </Form>
-      <div className={cnLoginForm('RegButton', ['Button-Wrap'])}>
+      <div className={cnLoginForm('RegButton', ['FormCard-Item', 'Button-Wrap'])}>
         <LinkTypeA
           href={AppRoute.Rega}
           className={cnLoginForm('RegLink', ['Button', 'Auth-Button'])}
@@ -130,7 +134,7 @@ function LoginForm(): JSX.Element {
         </LinkTypeA>
       </div>
       {isPhone ?
-        <FormInfo>
+        <FormInfo className='FormCard-Item'>
           <Link
             href={AppRoute.ResetPassword}
             className={cnLoginForm('RememberLink')}

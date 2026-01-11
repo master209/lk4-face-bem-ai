@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { HelmetProvider } from 'react-helmet-async';
 import { cn } from '@bem-react/classname';
+import { classnames } from '@bem-react/classnames';
 
 import { InputText, withInputTextTypePhone, withInputTextTypePasswordAuth } from '../../blocks/InputText';
 import {
@@ -87,12 +88,12 @@ function LoginForm(): JSX.Element {
   };
 
   return (
-    <FormCard className={cnLoginForm()}>
+    <FormCard className={classnames(/* 'Form',  */'Card', cnLoginForm())}>
       <HelmetProvider>
         <title>{TITLE_FREFIX}Вход в личный кабинет</title>
       </HelmetProvider>
-      <FormLogo className={cnFormLayout('logo')}/>
-      <div className={cnFormLayout('title')}>
+      <FormLogo className={cnFormLayout('Logo')}/>
+      <div className={cnFormLayout('Title')}>
         Вход в личный кабинет
       </div>
       <Form onSubmit={onSubmit} handleSubmit={handleSubmit}>
@@ -120,10 +121,10 @@ function LoginForm(): JSX.Element {
           </div>
         */}
       </Form>
-      <div className={cnLoginForm('reg-button', ['Button-Wrap'])}>
+      <div className={cnLoginForm('RegButton', ['Button-Wrap'])}>
         <LinkTypeA
           href={AppRoute.Rega}
-          className={cnLoginForm('reg-link', ['Button'])}
+          className={cnLoginForm('RegLink', ['Button', 'Auth-Button'])}
         >
           Зарегистрироваться
         </LinkTypeA>
@@ -132,7 +133,7 @@ function LoginForm(): JSX.Element {
         <FormInfo>
           <Link
             href={AppRoute.ResetPassword}
-            className={cnLoginForm('remember-link')}
+            className={cnLoginForm('RememberLink')}
           >
             Я забыл пароль
           </Link>

@@ -6,10 +6,12 @@
   min-width: $app-min-width;
   margin: 10% auto;
   padding: 22px 23px;
-
+  align-items: center;
+/* 
   >p, >div {
     margin: 10px 0;
   }
+ */
 }
 
 /* Модификатор для мобильных устройств */

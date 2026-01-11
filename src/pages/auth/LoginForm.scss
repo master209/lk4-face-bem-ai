@@ -1,15 +1,17 @@
 @import "../../scss/theme-app";
-@import "../../blocks/Auth/Auth"; /* Временный импорт для совместимости */
+@import "../../blocks/FormLayout/FormLayout.scss";
+//@import "../../blocks/Auth/Auth"; /* Временный импорт для совместимости */
 
 .LoginForm {
   margin-bottom: 5% !important;
 }
 
-.LoginForm__reg-button {
+.LoginForm-RegButton {
   margin-top: 5px;
+  margin-bottom: 10px;
 }
 
-.LoginForm__reg-link {
+.LoginForm-RegLink {
   transition: none;
 
   &:hover {
@@ -17,6 +19,6 @@
   }
 }
 
-.LoginForm__remember-link {
+.LoginForm-RememberLink {
   /* Стили для ссылки "Я забыл пароль" */
 }

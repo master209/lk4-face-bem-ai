@@ -9,8 +9,8 @@ import './FormLogo.scss';
 
 export const cnFormLogo = cn('FormLogo');
 
-export const FormLogo: FC<IClassNameProps> = () => (
-  <div className={cnFormLogo()}>
+export const FormLogo: FC<IClassNameProps> = ({...props}) => (
+  <div className={cnFormLogo()} {...props}>
     <Img src={`${IMG_PATH}logo.png`} alt="logo"/>
     <span className={cnFormLogo('Label')}>Галс-Телеком</span>
   </div>

@@ -88,62 +88,65 @@ function LoginForm(): JSX.Element {
   };
 
   return (
-    <FormCard className={cnLoginForm()}>
+    <>
       <HelmetProvider>
         <title>{TITLE_FREFIX}Вход в личный кабинет</title>
       </HelmetProvider>
-      <FormLogo className={cnFormLayout('Logo', ['FormCard-Item'])}/>
-      <div className={cnFormLayout('Title', ['FormCard-Item'])}>
-        Вход в личный кабинет
-      </div>
-      <Form
-      className={cnFormLayout('Form')}
-      onSubmit={onSubmit}
-      handleSubmit={handleSubmit}
-      >
-        <Nav
-          navItems={[
-            {to: 'phone', text: 'Телефон'},
-            {to: 'login', text: 'Логин'}
-          ]}
-          activeItemId={activeNavTab}
-          handleClick={handleClick}
-        />
-        {
-          isPhone
-            ? <InputTextTypePhone {...phoneProps} />
-            : <InputText {...loginProps} />
-        }
-        <InputTextTypePassword
-          useFormProps = {{register, errors, getValues}}
-          modtype="password"
-        />
 
-        {/*
-          <div className="FormInfo">
-            Нажимая кнопку «Войти», вы даете согласие на обработку <span>персональных данных</span>
-          </div>
-        */}
-      </Form>
-      <div className={cnLoginForm('RegButton', ['FormCard-Item', 'Button-Wrap'])}>
-        <LinkTypeA
-          href={AppRoute.Rega}
-          className={cnLoginForm('RegLink', ['Button', 'Auth-Button'])}
+      <FormCard className={cnLoginForm()}>
+        <FormLogo className={cnFormLayout('Logo', ['FormCard-Item'])}/>
+        <div className={cnFormLayout('Title', ['FormCard-Item'])}>
+          Вход в личный кабинет
+        </div>
+        <Form
+        className={cnFormLayout('Form')}
+        onSubmit={onSubmit}
+        handleSubmit={handleSubmit}
         >
-          Зарегистрироваться
-        </LinkTypeA>
-      </div>
-      {isPhone ?
-        <FormInfo className='FormCard-Item'>
-          <Link
-            href={AppRoute.ResetPassword}
-            className={cnLoginForm('RememberLink')}
+          <Nav
+            navItems={[
+              {to: 'phone', text: 'Телефон'},
+              {to: 'login', text: 'Логин'}
+            ]}
+            activeItemId={activeNavTab}
+            handleClick={handleClick}
+          />
+          {
+            isPhone
+              ? <InputTextTypePhone {...phoneProps} />
+              : <InputText {...loginProps} />
+          }
+          <InputTextTypePassword
+            useFormProps = {{register, errors, getValues}}
+            modtype="password"
+          />
+
+          {/*
+            <div className="FormInfo">
+              Нажимая кнопку «Войти», вы даете согласие на обработку <span>персональных данных</span>
+            </div>
+          */}
+        </Form>
+        <div className={cnLoginForm('RegButton', ['FormCard-Item', 'Button-Wrap'])}>
+          <LinkTypeA
+            href={AppRoute.Rega}
+            className={cnLoginForm('RegLink', ['Button', 'Auth-Button'])}
           >
-            Я забыл пароль
-          </Link>
-        </FormInfo>
-        : null}
-    </FormCard>
+            Зарегистрироваться
+          </LinkTypeA>
+        </div>
+        {isPhone ?
+          <FormInfo className='FormCard-Item'>
+            <Link
+              href={AppRoute.ResetPassword}
+              className={cnLoginForm('RememberLink')}
+            >
+              Я забыл пароль
+            </Link>
+          </FormInfo>
+          : null}
+      </FormCard>
+    </>
   );
 }
 

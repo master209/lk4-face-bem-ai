@@ -98,9 +98,9 @@ function LoginForm(): JSX.Element {
           Вход в личный кабинет
         </div>
         <Form
-        className={cnFormLayout('Form')}
-        onSubmit={onSubmit}
-        handleSubmit={handleSubmit}
+          className={cnFormLayout('Form')}
+          onSubmit={onSubmit}
+          handleSubmit={handleSubmit}
         >
           <Nav
             navItems={[

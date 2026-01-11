@@ -4,7 +4,12 @@ import { cn } from '@bem-react/classname';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { InputText, withInputTextTypePassword } from '../../blocks/InputText';
-import { Form, FormLogo } from '../../blocks';
+import {
+  Form,
+  FormLogo,
+  FormCard,
+  cnFormLayout,
+}  from '../../blocks';
 
 import { ResetPasswordOk } from './ResetPasswordOk';
 import { fetchResetPassword } from '../../store/api-actions';
@@ -64,12 +69,13 @@ export function ResetPasswordForm(): JSX.Element {
   return (
     <div>
       {isResetPassword ? <ResetPasswordOk/> :
-        <div className={cnResetPasswordForm(null, ['Auth', 'Form', 'Card'])}>
-          <FormLogo/>
-          <div className="FormTitle">
+        <FormCard className={cnResetPasswordForm()}>
+          <FormLogo className={cnFormLayout('Logo', ['FormCard-Item'])}/>
+          <div className={cnFormLayout('Title', ['FormCard-Item'])}>
             Введите новый пароль
           </div>
           <Form
+            className={cnFormLayout('Form')}
             submitLabel="Сохранить"
             onSubmit={onSubmit}
             handleSubmit={handleSubmit}
@@ -99,7 +105,7 @@ export function ResetPasswordForm(): JSX.Element {
               error={errors.passwordRepeat?.message || passwordsMustMatchErrorMessage()}
             />
           </Form>
-        </div>}
+        </FormCard>}
     </div>
   );
 }

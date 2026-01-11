@@ -10,6 +10,8 @@ import {
   FormLogo,
   FormInfo,
   Link,
+  FormCard,
+  cnFormLayout,
 } from '../../blocks';
 
 import { fetchRequestResetPassword } from '../../store/api-actions';
@@ -61,34 +63,40 @@ function RequestResetPasswordForm(): JSX.Element {
   };
 
   return (
-    <p className={cnResetPasswordForm(null, ['Auth', 'Form', 'Card'])}>
+    <>
       <HelmetProvider>
         <title>{TITLE_FREFIX}Восстановление пароля</title>
       </HelmetProvider>
-      <FormLogo/>
-      <div className="FormTitle">
-        Восстановление пароля
-      </div>
-      <Form
-        submitLabel="Отправить"
-        onSubmit={onSubmit}
-        handleSubmit={handleSubmit}
-      >
-        <FormInfo>Для продолжения введите свой телефон</FormInfo>
-        <InputTextTypePhone
-          useFormProps = {{register, errors, getValues}}
-          modtype = 'phone'
-        />
-      </Form>
-      <FormInfo>
-        <Link
-          href={AppRoute.Login}
-          handleClick={() => true}
+
+      <FormCard className={cnResetPasswordForm()}>
+        <FormLogo className={cnFormLayout('Logo', ['FormCard-Item'])}/>
+        <div className={cnFormLayout('Title', ['FormCard-Item'])}>
+          Восстановление пароля
+        </div>
+        <Form
+          className={cnFormLayout('Form')}
+          submitLabel="Отправить"
+          onSubmit={onSubmit}
+          handleSubmit={handleSubmit}
         >
-          Я вспомнил пароль
-        </Link>
-      </FormInfo>
-    </p>
+          <FormInfo className={`FormInfo-${cnResetPasswordForm()}`}>
+            Для продолжения введите свой телефон
+          </FormInfo>
+          <InputTextTypePhone
+            useFormProps = {{register, errors, getValues}}
+            modtype = 'phone'
+          />
+        </Form>
+        <FormInfo className={'FormCard-Item'}>
+          <Link
+            href={AppRoute.Login}
+            handleClick={() => true}
+          >
+            Я вспомнил пароль
+          </Link>
+        </FormInfo>
+      </FormCard>
+    </>
   );
 }
 

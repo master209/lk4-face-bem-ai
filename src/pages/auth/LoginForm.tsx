@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { HelmetProvider } from 'react-helmet-async';
 import { cn } from '@bem-react/classname';
-import { classnames } from '@bem-react/classnames';
 
 import { InputText, withInputTextTypePhone, withInputTextTypePasswordAuth } from '../../blocks/InputText';
 import {

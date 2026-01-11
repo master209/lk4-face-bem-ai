@@ -11,6 +11,8 @@ import {
   FormLogo,
   FormInfo,
   Link,
+  FormCard,
+  cnFormLayout,
 } from '../../blocks';
 
 import { fetchRega } from '../../store/api-actions';
@@ -70,94 +72,98 @@ function RegaForm(): JSX.Element {
       : '';
 
   return (
-    <div className={cnRegaForm(null, ['Auth', 'Form', 'Card'])}>
+    <>
       <HelmetProvider>
         <title>{TITLE_FREFIX}Регистрация</title>
       </HelmetProvider>
-      <FormLogo/>
-      <div className="FormTitle">
-        Регистрация
-      </div>
-      <Form
-        submitLabel="Зарегистрироваться"
-        onSubmit={onSubmit}
-        handleSubmit={handleSubmit}
-      >
-        <InputText
-          useFormProps = {{register, errors, getValues}}
-          name="lastname"
-          icon="user"
-          placeholder="Фамилия"
-          required
-          validators={{required: FormError.Required}}
-          error={errors.lastname?.message}
-        />
-        <InputText
-          useFormProps = {{register, errors, getValues}}
-          name="firstname"
-          icon="user"
-          placeholder="Имя"
-          required
-          validators={{required: FormError.Required}}
-          error={errors.firstname?.message}
-        />
-        <InputTextTypePhone
-          useFormProps = {{register, errors, getValues}}
-          modtype = 'phone'
-        />
-        <InputTextTypePassword
-          useFormProps = {{register, errors, getValues}}
-          modtype="password"
-          validators={{
-            validate: {PasswordsMustMatch: (val: string) => // УСЛОВИЯ ВАЛИДНОГО ЗНАЧЕНИЯ:
-              // https://codesandbox.io/s/react-hook-form-custom-validation-8kuu7
-              (val === passwordRepeat && !!passwordRepeat) // когда пароли совпали + в passwordRepeat НЕ пусто
-               || !passwordRepeat // + ИЛИ когда в повторе пустое значение
-            }
-          }}
-        />
-        <InputTextTypePassword
-          useFormProps = {{register, errors, getValues}}
-          name="passwordRepeat"
-          modtype="password"
-          placeholder="Повтор пароля"
-          validators={{
-            validate: {PasswordsMustMatch: (val: string) =>
-              (val === password && !!password) // когда пароли совпали + в password НЕ пусто
-               || !password // + ИЛИ когда в password пустое значение
-            }
-          }}
-          error={errors.passwordRepeat?.message || passwordsMustMatchErrorMessage()}
-        />
-        <InputCheckbox
-          register={register}
-          name="confirm"
-          label={
-            <FormInfo>
-              Принимаю&nbsp;
-              <Link
-                className="Link"
-                target="_blank"
-                href={`${DOC_PATH}oferta_6454130467.docx`}
-              >
-                пользовательское соглашение
-              </Link>
-            </FormInfo>
-          }
-          withLabel
-          validators={{required: 'Необходимо подтвердить согласие'}}
-          error={errors.confirm?.message}
-        />
-      </Form>
-      <FormInfo>
-        <Link
-          href={AppRoute.Login}
-          handleClick={() => true}
+
+      <FormCard className={cnRegaForm()}>
+        <FormLogo className={cnFormLayout('Logo', ['FormCard-Item'])}/>
+        <div className={cnFormLayout('Title', ['FormCard-Item'])}>
+          Регистрация
+        </div>
+        <Form
+          className={cnFormLayout('Form')}
+          submitLabel="Зарегистрироваться"
+          onSubmit={onSubmit}
+          handleSubmit={handleSubmit}
         >
-          Я уже зарегистрирован
-        </Link>
-      </FormInfo>
-    </div>
+          <InputText
+            useFormProps = {{register, errors, getValues}}
+            name="lastname"
+            icon="user"
+            placeholder="Фамилия"
+            required
+            validators={{required: FormError.Required}}
+            error={errors.lastname?.message}
+          />
+          <InputText
+            useFormProps = {{register, errors, getValues}}
+            name="firstname"
+            icon="user"
+            placeholder="Имя"
+            required
+            validators={{required: FormError.Required}}
+            error={errors.firstname?.message}
+          />
+          <InputTextTypePhone
+            useFormProps = {{register, errors, getValues}}
+            modtype = 'phone'
+          />
+          <InputTextTypePassword
+            useFormProps = {{register, errors, getValues}}
+            modtype="password"
+            validators={{
+              validate: {PasswordsMustMatch: (val: string) => // УСЛОВИЯ ВАЛИДНОГО ЗНАЧЕНИЯ:
+                // https://codesandbox.io/s/react-hook-form-custom-validation-8kuu7
+                (val === passwordRepeat && !!passwordRepeat) // когда пароли совпали + в passwordRepeat НЕ пусто
+                || !passwordRepeat // + ИЛИ когда в повторе пустое значение
+              }
+            }}
+          />
+          <InputTextTypePassword
+            useFormProps = {{register, errors, getValues}}
+            name="passwordRepeat"
+            modtype="password"
+            placeholder="Повтор пароля"
+            validators={{
+              validate: {PasswordsMustMatch: (val: string) =>
+                (val === password && !!password) // когда пароли совпали + в password НЕ пусто
+                || !password // + ИЛИ когда в password пустое значение
+              }
+            }}
+            error={errors.passwordRepeat?.message || passwordsMustMatchErrorMessage()}
+          />
+          <InputCheckbox
+            register={register}
+            name="confirm"
+            label={
+              <FormInfo>
+                Принимаю&nbsp;
+                <Link
+                  className="Link"
+                  target="_blank"
+                  href={`${DOC_PATH}oferta_6454130467.docx`}
+                >
+                  пользовательское соглашение
+                </Link>
+              </FormInfo>
+            }
+            withLabel
+            validators={{required: 'Необходимо подтвердить согласие'}}
+            error={errors.confirm?.message}
+          />
+        </Form>
+        <FormInfo className='FormCard-Item'>
+          <Link
+            href={AppRoute.Login}
+            handleClick={() => true}
+          >
+            Я уже зарегистрирован
+          </Link>
+        </FormInfo>
+      </FormCard>
+    </>
   );
 }
 

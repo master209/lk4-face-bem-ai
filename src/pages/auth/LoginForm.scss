@@ -1,13 +1,12 @@
 @import "../../scss/theme-app";
 @import "../../blocks/FormLayout/FormLayout.scss";
-//@import "../../blocks/Auth/Auth"; /* Временный импорт для совместимости */
 
 .LoginForm {
-  margin-bottom: 5% !important;
+  margin-bottom: 5%;
 }
 
 .LoginForm-RegButton {
-  margin-top: 20PX;
+  margin-top: 17px;
 }
 
 .LoginForm-RegLink {

@@ -154,7 +154,7 @@ function RegaForm(): JSX.Element {
             error={errors.confirm?.message}
           />
         </Form>
-        <FormInfo className='FormCard-Item'>
+        <FormInfo className={cnFormLayout('Info', ['FormCard-Item'])}>
           <Link
             href={AppRoute.Login}
             handleClick={() => true}

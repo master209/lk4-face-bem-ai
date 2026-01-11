@@ -135,7 +135,7 @@ function LoginForm(): JSX.Element {
           </LinkTypeA>
         </div>
         {isPhone ?
-          <FormInfo className='FormCard-Item'>
+          <FormInfo className={cnFormLayout('Info', ['FormCard-Item'])}>
             <Link
               href={AppRoute.ResetPassword}
               className={cnLoginForm('RememberLink')}

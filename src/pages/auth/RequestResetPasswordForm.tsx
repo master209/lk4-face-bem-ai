@@ -79,7 +79,7 @@ function RequestResetPasswordForm(): JSX.Element {
           onSubmit={onSubmit}
           handleSubmit={handleSubmit}
         >
-          <FormInfo className={`FormInfo-${cnResetPasswordForm()}`}>
+          <FormInfo className="Form-InputLabel">
             Для продолжения введите свой телефон
           </FormInfo>
           <InputTextTypePhone
@@ -87,7 +87,7 @@ function RequestResetPasswordForm(): JSX.Element {
             modtype = 'phone'
           />
         </Form>
-        <FormInfo className={'FormCard-Item'}>
+        <FormInfo className={cnFormLayout('Info', ['FormCard-Item'])}>
           <Link
             href={AppRoute.Login}
             handleClick={() => true}
